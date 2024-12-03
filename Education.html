@@ -1,0 +1,263 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Education - Portfolio</title>
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;500&family=Dancing+Script:wght@400&family=Pacifico&family=Roboto:wght@400;700&display=swap" rel="stylesheet">
+    <style>
+        /* General Reset */
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        /* Body */
+        body {
+            font-family: 'Roboto', sans-serif;
+            background: url('background.jpg') no-repeat center center fixed;
+            background-size: cover;
+            color: #333;
+            line-height: 1.6;
+            text-align: center;
+            animation: fadeIn 2s ease-in-out;
+        }
+/* Navbar */
+        nav {
+            background-color: #2c3e50;
+            color: white;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            padding: 15px 30px;
+            border-radius: 8px;
+            margin-bottom: 30px;
+            position: relative;
+            box-shadow: 0 6px 12px rgba(0, 0, 0, 0.1);
+            transition: all 0.3s ease;
+        }
+
+        nav .brand {
+            font-family: 'Poppins', sans-serif; /* Bold font for the brand name */
+            font-size: 28px;
+            font-weight: 600;
+            color: white;
+            letter-spacing: 2px;
+        }
+
+        nav .menu {
+            display: flex;
+            gap: 20px;
+        }
+
+        nav .menu a {
+            font-family: 'Quicksand', sans-serif;
+            font-size: 18px;
+            color: white;
+            text-decoration: none;
+            padding: 8px 15px;
+            border-radius: 5px;
+            transition: all 0.3s ease;
+        }
+
+        nav .menu a:hover {
+            background-color: #16a085;
+            color: white;
+            transform: scale(1.1);
+        }
+
+        nav .menu a:active {
+            transform: scale(1);
+            background-color: #1abc9c;
+            transition: transform 0.1s ease, background-color 0.1s ease;
+        }
+
+
+        /* Title Section */
+        .education-title h1 {
+            font-family: 'Pacifico', cursive;
+            font-size: 3.5rem;
+            color: #ff6f61;
+            text-transform: uppercase;
+            margin-bottom: 40px;
+            animation: fadeInUp 1.5s ease-in-out;
+        }
+
+        /* Education Section */
+        .education-section {
+            max-width: 800px;
+            margin: 0 auto 40px;
+            padding: 20px;
+            text-align: left;
+            background-color: rgba(255, 255, 255, 0.8);
+            border: 1px solid #ddd;
+            border-radius: 10px;
+            box-shadow: 0 5px 15px rgba(0, 0, 0, 0.1);
+            display: flex;
+            align-items: center;
+            gap: 20px;
+            opacity: 0;
+            transform: translateY(20px);
+            animation: fadeInUp 1s ease-in-out forwards;
+            transition: transform 0.3s ease, box-shadow 0.3s ease;
+        }
+
+        .education-section img {
+            width: 120px;
+            height: 120px;
+            object-fit: contain;
+            border: 1px solid #ddd;
+            border-radius: 50%;
+            background-color: #f0f0f0;
+            box-shadow: 0 3px 6px rgba(0, 0, 0, 0.1);
+            transition: transform 0.3s ease;
+        }
+
+        .education-section:hover img {
+            transform: scale(1.1);
+        }
+
+        .education-details {
+            flex: 1;
+        }
+
+        .education-details h2 {
+            font-family: 'Poppins', sans-serif;
+            font-size: 2.5rem;
+            color: #ff6f61;
+            margin-bottom: 10px;
+            transition: color 0.3s ease;
+            font-weight: 600;
+        }
+
+        .education-details p {
+            font-family: 'Roboto', sans-serif;
+            font-size: 1.3rem;
+            margin-bottom: 10px;
+            color: #555;
+            transition: color 0.3s ease;
+        }
+
+        .education-details span {
+            font-weight: bold;
+            color: #ff6f61;
+        }
+
+        /* Hover Effect on Education Sections */
+        .education-section:hover {
+            box-shadow: 0 10px 30px rgba(0, 0, 0, 0.2);
+            transform: translateY(-10px);
+            background-color: #fff1f0;
+        }
+
+        /* Keyframe Animations */
+        @keyframes fadeIn {
+            0% {
+                opacity: 0;
+            }
+            100% {
+                opacity: 1;
+            }
+        }
+
+        @keyframes fadeInUp {
+            0% {
+                opacity: 0;
+                transform: translateY(20px);
+            }
+            100% {
+                opacity: 1;
+                transform: translateY(0);
+            }
+        }
+
+        /* Responsive Design */
+        @media (max-width: 768px) {
+            .education-title h1 {
+                font-size: 2.5rem;
+            }
+
+            .education-section {
+                flex-direction: column;
+                text-align: center;
+            }
+
+            .education-section img {
+                margin-bottom: 15px;
+            }
+
+            .education-details h2 {
+                font-size: 2rem;
+            }
+
+            .education-details p {
+                font-size: 1.1rem;
+            }
+        }
+
+        a {
+            text-decoration: none;
+        }
+
+    </style>
+</head>
+<body>
+ <!-- Navigation Bar -->
+    <nav>
+       <div class="brand">Hilman's Portfolio</div>
+        <div class="menu">
+            <a href="index.html">Home</a>
+            <a href="AboutMe.html">About Me</a>
+            <a href="Family.html">Family</a>
+            <a href="Experience.html">Experience</a>
+            <a href="Education.html">Education</a>
+            <a href="Gallery.html">Gallery</a>
+        </div>
+    </nav>
+
+    <!-- Education Title -->
+    <div class="education-title">
+        <h1>Education</h1>
+    </div>
+
+    <!-- Education Section 1 -->
+    <a href="https://www.google.com/maps?q=Universiti+Teknologi+MARA" target="_blank">
+        <div class="education-section">
+            <img src="uitm.png" alt="UiTM Logo">
+            <div class="education-details">
+                <h2>University</h2>
+                <p><span>Name:</span> Universiti Teknologi MARA (UiTM)</p>
+                <p><span>Course:</span> Bachelor of Information Management</p>
+                <p><span>Year:</span> 2022 - Present</p>
+            </div>
+        </div>
+    </a>
+
+    <!-- Education Section 2 -->
+    <a href="https://www.google.com/maps?q=SMK+Kerdau" target="_blank">
+        <div class="education-section">
+            <img src="smkk.jpg" alt="SMKK Logo">
+            <div class="education-details">
+                <h2>High School</h2>
+                <p><span>Name:</span> SMK Kerdau</p>
+                <p><span>Field of Study:</span> Account/Science Computer</p>
+                <p><span>Year:</span> 2017- 2021</p>
+            </div>
+        </div>
+    </a>
+
+    <!-- Education Section 3 -->
+    <a href="https://www.google.com/maps?q=SK+Kuala+Tekal" target="_blank">
+        <div class="education-section">
+            <img src="skkt.jpg" alt="SKKT Logo">
+            <div class="education-details">
+                <h2>Elementary School</h2>
+                <p><span>Name:</span> SK Kuala Tekal</p>
+                <p><span>Year:</span> 2011 - 2016</p>
+            </div>
+        </div>
+    </a>
+
+</body>
+</html>

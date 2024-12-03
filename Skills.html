@@ -1,0 +1,265 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Skills - Hilman</title>
+    <style>
+        /* Reset */
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: Arial, sans-serif;
+            line-height: 1.6;
+            color: #fff;
+            margin: 0;
+            padding: 0;
+            position: relative;
+        }
+
+        /* Background Video */
+        .background-video {
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+            z-index: -1;
+        }
+
+      /* Navbar */
+        nav {
+            background-color: #2c3e50; /* Darker color for a modern look */
+            color: white;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            padding: 15px 30px;
+            border-radius: 8px;
+            margin-bottom: 30px;
+            position: relative;
+            box-shadow: 0 6px 12px rgba(0, 0, 0, 0.1);
+            transition: all 0.3s ease;
+        }
+
+        nav .brand {
+            font-family: 'Arial', sans-serif;
+            font-size: 28px;
+            font-weight: bold;
+            color: white;
+            letter-spacing: 2px;
+        }
+
+        nav .menu {
+            display: flex;
+            gap: 20px;
+        }
+
+        nav .menu a {
+            font-family: 'Verdana', sans-serif;
+            font-size: 18px;
+            color: white;
+            text-decoration: none;
+            padding: 8px 15px;
+            border-radius: 5px;
+            transition: all 0.3s ease;
+        }
+
+        nav .menu a:hover {
+            background-color: #16a085; /* Greenish hover effect */
+            color: white;
+            transform: scale(1.1); /* Smooth zoom effect */
+        }
+
+        nav .menu a:active {
+            transform: scale(1);
+            background-color: #1abc9c; /* Slightly darker on click */
+            transition: transform 0.1s ease, background-color 0.1s ease;
+        }
+
+
+        /* Title Section */
+        .title-section {
+            text-align: center;
+            margin: 50px 0 30px;
+            animation: fade-in-title 2s ease-in-out;
+        }
+
+        .title-section h1 {
+            font-size: 50px;
+            color: White;
+            text-transform: uppercase;
+            font-family: 'Montserrat', sans-serif;
+            margin-bottom: 10px;
+        }
+
+        @keyframes fade-in-title {
+            0% {
+                opacity: 0;
+                transform: translateY(-30px);
+            }
+            100% {
+                opacity: 1;
+                transform: translateY(0);
+            }
+        }
+
+        /* Skills Table */
+        .skills-table {
+            width: 80%;
+            margin: 0 auto;
+            border-collapse: collapse;
+            animation: fade-in-table 1.5s ease-in-out;
+        }
+
+        .skills-table th, .skills-table td {
+            border: 2px solid #2ecc71;
+            padding: 15px;
+            text-align: center;
+        }
+
+        .skills-table th {
+            background-color: rgba(52, 73, 94, 0.9);
+            color: #fff;
+            font-size: 20px;
+        }
+
+        .skills-table td {
+            background-color: rgba(30, 42, 56, 0.9);
+            font-size: 18px;
+            color: #ddd;
+            position: relative;
+            overflow: hidden;
+            transition: transform 0.3s ease;
+        }
+
+        .skills-table img {
+            width: 150px;
+            height: 150px;
+            object-fit: cover;
+            border-radius: 10px;
+            transition: transform 0.3s ease;
+        }
+
+        .skills-table img:hover {
+            transform: scale(1.2);
+        }
+
+        .skills-table td:hover {
+            transform: scale(1.03);
+            background-color: rgba(36, 59, 85, 0.9);
+        }
+
+        .skills-table ol {
+            text-align: left;
+            margin-left: 20px;
+            color: #ddd;
+        }
+
+        @keyframes fade-in-table {
+            0% {
+                opacity: 0;
+                transform: translateY(20px);
+            }
+            100% {
+                opacity: 1;
+                transform: translateY(0);
+            }
+        }
+
+        /* Space Below Table */
+        section:last-of-type {
+            margin-bottom: 100px;
+        }
+    </style>
+</head>
+<body>
+    <!-- Background Video -->
+    <video class="background-video" autoplay loop muted>
+        <source src="background2.mp4" type="video/mp4">
+        Your browser does not support the video tag.
+    </video>
+
+    <!-- Navbar -->
+    <nav>
+        <div class="brand">Hilman's Portfolio</div>
+        <div class="menu">
+            <a href="index.html">Home</a>
+            <a href="AboutMe.html">About Me</a>
+            <a href="Skills.html">Skills</a>
+            <a href="Experience.html">Experience</a>
+            <a href="Education.html">Education</a>
+            <a href="Gallery.html">Gallery</a>
+        </div>
+    </nav>
+
+    <!-- Title Section -->
+    <section class="title-section">
+        <h1>My Skills</h1>
+    </section>
+
+    <!-- Skills Table -->
+    <section>
+        <table class="skills-table">
+            <thead>
+                <tr>
+                    <th>Skill</th>
+                    <th>Description</th>
+                    <th>Gif</th>
+                </tr>
+            </thead>
+            <tbody>
+                <tr>
+                    <td>Software Development</td>
+                    <td>
+                        <ol>
+                            <li>Frontend Development: HTML, CSS, JavaScript</li>
+                            <li>Backend Development: PHP, MySQL</li>
+                            <li>Report Automation</li>
+                        </ol>
+                    </td>
+                    <td><img src="logo.gif" alt="Software Development"></td>
+                </tr>
+                <tr>
+                    <td>Design Posters</td>
+                    <td>
+                        <ol>
+                            <li>Graphic Design with Canva</li>
+                            <li>Magazine Layouts</li>
+                            <li>Official Posters</li>
+                        </ol>
+                    </td>
+                    <td><img src="logo1.gif" alt="Poster Design"></td>
+                </tr>
+                <tr>
+                    <td>Communication</td>
+                    <td>
+                        <ol>
+                            <li>Clear Presentation Skills</li>
+                            <li>Team Collaboration</li>
+                            <li>Written & Verbal Communication</li>
+                        </ol>
+                    </td>
+                    <td><img src="logo2.gif" alt="Communication"></td>
+                </tr>
+                <tr>
+                    <td>Critical Thinking</td>
+                    <td>
+                        <ol>
+                            <li>Problem-Solving</li>
+                            <li>Strategic Planning</li>
+                            <li>Opportunity Analysis</li>
+                        </ol>
+                    </td>
+                    <td><img src="logo3.gif" alt="Critical Thinking"></td>
+                </tr>
+            </tbody>
+        </table>
+    </section>
+</body>
+</html>

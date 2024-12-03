@@ -1,0 +1,302 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Family Slideshow - Animated</title>
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;600&family=Quicksand:wght@400;500&family=Lobster&display=swap" rel="stylesheet">
+    <style>
+        /* Reset */
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: 'Quicksand', sans-serif;
+            line-height: 1.6;
+            background: url('background2.gif') no-repeat center center fixed;
+            background-size: cover;
+            color: #333;
+            overflow-x: hidden;
+        }
+
+        /* Navbar (Unchanged) */
+        nav {
+            background-color: #2c3e50;
+            color: white;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            padding: 15px 30px;
+            border-radius: 8px;
+            margin-bottom: 30px;
+            position: relative;
+            box-shadow: 0 6px 12px rgba(0, 0, 0, 0.1);
+            transition: all 0.3s ease;
+        }
+
+        nav .brand {
+            font-family: 'Poppins', sans-serif;
+            font-size: 28px;
+            font-weight: 600;
+            color: white;
+            letter-spacing: 2px;
+        }
+
+        nav .menu {
+            display: flex;
+            gap: 20px;
+        }
+
+        nav .menu a {
+            font-family: 'Quicksand', sans-serif;
+            font-size: 18px;
+            color: white;
+            text-decoration: none;
+            padding: 8px 15px;
+            border-radius: 5px;
+            transition: all 0.3s ease;
+        }
+
+        nav .menu a:hover {
+            background-color: #16a085;
+            transform: scale(1.1);
+        }
+
+        /* Title Section */
+        .title-section {
+            text-align: center;
+            margin-top: 50px;
+            color: #fff;
+            animation: fadeIn 2s;
+        }
+
+        .title-section h1 {
+            font-size: 60px;
+            font-family: 'Lobster', cursive;
+            color: #ff6f61;
+            text-shadow: 3px 3px 8px rgba(0, 0, 0, 0.5);
+        }
+
+        /* Slideshow */
+        .slideshow-container {
+            position: relative;
+            max-width: 1000px;
+            margin: auto;
+            overflow: hidden;
+            border-radius: 15px;
+            background: rgba(255, 255, 255, 0.95);
+            padding: 20px;
+            box-shadow: 0 8px 20px rgba(0, 0, 0, 0.2);
+            animation: zoomIn 1.5s;
+        }
+
+        .slide {
+            display: none;
+            text-align: center;
+            padding: 20px;
+            opacity: 0;
+            animation: fadeSlide 1s forwards;
+        }
+
+        .slide img {
+            max-width: 100%;
+            max-height: 500px;
+            border-radius: 10px;
+            box-shadow: 0 6px 12px rgba(0, 0, 0, 0.3);
+            transform: scale(0.95);
+            transition: transform 0.3s ease-in-out;
+        }
+
+        .slide img:hover {
+            transform: scale(1.05);
+        }
+
+        .slide h3 {
+            font-size: 28px;
+            font-family: 'Poppins', sans-serif;
+            color: #3498db;
+            margin-bottom: 10px;
+            text-shadow: 1px 1px 3px rgba(0, 0, 0, 0.2);
+        }
+
+        .slide p {
+            font-size: 18px;
+            color: #555;
+        }
+
+        /* Navigation Buttons */
+        .prev, .next {
+            position: absolute;
+            top: 50%;
+            transform: translateY(-50%);
+            background: rgba(0, 0, 0, 0.5);
+            color: white;
+            padding: 10px;
+            border-radius: 50%;
+            cursor: pointer;
+            font-size: 24px;
+        }
+
+        .prev {
+            left: 10px;
+        }
+
+        .next {
+            right: 10px;
+        }
+
+        .prev:hover, .next:hover {
+            background: rgba(0, 0, 0, 0.8);
+        }
+
+        /* Dots */
+        .dots {
+            text-align: center;
+            margin-top: 20px;
+        }
+
+        .dot {
+            height: 15px;
+            width: 15px;
+            margin: 0 5px;
+            background-color: #bbb;
+            border-radius: 50%;
+            display: inline-block;
+            transition: background-color 0.3s, transform 0.3s;
+        }
+
+        .dot.active-dot {
+            background-color: #ff6f61;
+            transform: scale(1.2);
+        }
+
+        .dot:hover {
+            background-color: #ff9a9e;
+        }
+
+        /* Animations */
+        @keyframes fadeIn {
+            from {
+                opacity: 0;
+                transform: translateY(-20px);
+            }
+            to {
+                opacity: 1;
+                transform: translateY(0);
+            }
+        }
+
+        @keyframes zoomIn {
+            from {
+                transform: scale(0.9);
+                opacity: 0;
+            }
+            to {
+                transform: scale(1);
+                opacity: 1;
+            }
+        }
+
+        @keyframes fadeSlide {
+            from {
+                opacity: 0;
+                transform: translateY(20px);
+            }
+            to {
+                opacity: 1;
+                transform: translateY(0);
+            }
+        }
+    </style>
+</head>
+<body>
+    <!-- Navbar -->
+    <nav>
+        <div class="brand">Hilman's Portfolio</div>
+        <div class="menu">
+            <a href="index.html">Home</a>
+            <a href="AboutMe.html">About Me</a>
+            <a href="Family.html">Family</a>
+            <a href="Experience.html">Experience</a>
+            <a href="Education.html">Education</a>
+            <a href="Gallery.html">Gallery</a>
+        </div>
+    </nav>
+
+    <!-- Title Section -->
+    <section class="title-section">
+        <h1>My Family</h1>
+    </section>
+
+    <!-- Slideshow -->
+    <div class="slideshow-container">
+        <div class="slide">
+            <img src="keluarga1.jpeg" alt="Zurani & Ahmad">
+            <h3>Zurani & Ahmad</h3>
+            <p>The heaven of our family, full of love, care, and guidance.</p>
+        </div>
+        <div class="slide">
+            <img src="keluarga2.jpeg" alt="Hanis Asyikin">
+            <h3>Hanis Asyikin</h3>
+            <p>The eldest sis, full of swag and wisdom, always the chill role model.</p>
+        </div>
+        <div class="slide">
+            <img src="keluarga3.jpeg" alt="Hazreen Asyikin">
+            <h3>Hazreen Asyikin</h3>
+            <p>The second sis, always cheerful, spreading positivity wherever she goes.</p>
+        </div>
+        <div class="slide">
+            <img src="keluarga4.jpeg" alt="Hazwani Asyikin">
+            <h3>Hazwani Asyikin</h3>
+            <p>The third sis, she's super fierce, but when it comes to money, she's the most generous..</p>
+        </div>
+        <div class="slide">
+            <img src="keluarga5.jpeg" alt="Hilman">
+            <h3>Mohamad Hilman</h3>
+            <p>The youngest member, learning and growing every day, plus he's the cutest, slimmest, most ripped, and looks just like Jungkook from BTS!</p>
+        </div>
+
+        <!-- Navigation Buttons -->
+        <a class="prev" onclick="changeSlide(-1)">&#10094;</a>
+        <a class="next" onclick="changeSlide(1)">&#10095;</a>
+    </div>
+
+    <!-- Dots -->
+    <div class="dots">
+        <span class="dot" onclick="setSlide(0)"></span>
+        <span class="dot" onclick="setSlide(1)"></span>
+        <span class="dot" onclick="setSlide(2)"></span>
+        <span class="dot" onclick="setSlide(3)"></span>
+        <span class="dot" onclick="setSlide(4)"></span>
+    </div>
+
+    <script>
+        let currentSlide = 0;
+        const slides = document.querySelectorAll(".slide");
+        const dots = document.querySelectorAll(".dot");
+
+        function showSlide(index) {
+            slides.forEach((slide, i) => {
+                slide.style.display = i === index ? "block" : "none";
+                dots[i].classList.toggle("active-dot", i === index);
+            });
+        }
+
+        function changeSlide(direction) {
+            currentSlide = (currentSlide + direction + slides.length) % slides.length;
+            showSlide(currentSlide);
+        }
+
+        function setSlide(index) {
+            currentSlide = index;
+            showSlide(index);
+        }
+
+        setInterval(() => changeSlide(1), 5000); // Auto-slide every 5 seconds
+        showSlide(currentSlide);
+    </script>
+</body>
+</html>
