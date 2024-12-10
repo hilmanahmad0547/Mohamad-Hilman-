@@ -6,14 +6,12 @@
     <title>Portfolio - Hilman</title>
     <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;500;700&family=Dancing+Script:wght@400;700&family=Montserrat:wght@400;700&family=Pacifico&display=swap" rel="stylesheet">
     <style>
-        /* Reset */
         * {
             margin: 0;
             padding: 0;
             box-sizing: border-box;
         }
 
-        /* Body and HTML */
         html, body {
             height: 100%;
         }
@@ -26,7 +24,7 @@
             overflow-x: hidden;
         }
 
-         /* Navbar */
+        /* Navbar */
         nav {
             background-color: #2c3e50;
             color: white;
@@ -35,14 +33,14 @@
             align-items: center;
             padding: 15px 30px;
             border-radius: 8px;
-            margin-bottom: 30px;
+            margin-bottom: 10px;
             position: relative;
             box-shadow: 0 6px 12px rgba(0, 0, 0, 0.1);
             transition: all 0.3s ease;
         }
 
         nav .brand {
-            font-family: 'Poppins', sans-serif; /* Bold font for the brand name */
+            font-family: 'Poppins', sans-serif;
             font-size: 28px;
             font-weight: 600;
             color: white;
@@ -76,7 +74,23 @@
             transition: transform 0.1s ease, background-color 0.1s ease;
         }
 
-        /* Hero Section */
+        /* Digital Clock  */
+        .clock-container {
+            text-align: left;
+            margin-top: 30px;
+        }
+
+        .clock {
+            font-family: 'Roboto', sans-serif;
+            font-size: 20px;
+            color: white;
+            padding: 5px 15px;
+            border: 2px solid #16a085;
+            border-radius: 8px;
+            background-color: #34495e;
+            display: inline-block;
+        }
+
         .hero {
             display: flex;
             justify-content: space-between;
@@ -146,7 +160,7 @@
             margin-bottom: 10px;
         }
 
-        /* Hero Image */
+        /* Image */
         .hero-image img {
             max-width: 100%;
             border-radius: 15px;
@@ -191,6 +205,11 @@
         </div>
     </nav>
 
+    <!-- Digital Clock Below Navbar -->
+    <div class="clock-container">
+        <div class="clock" id="clock"></div>
+    </div>
+
     <!-- Hero Section -->
     <section class="hero">
         <div class="hero-text">
@@ -227,5 +246,19 @@
             <img src="hilman.jpeg" alt="Hero Image">
         </div>
     </section>
+
+    <script>
+        function updateClock() {
+            const clock = document.getElementById('clock');
+            const now = new Date();
+            const hours = String(now.getHours()).padStart(2, '0');
+            const minutes = String(now.getMinutes()).padStart(2, '0');
+            const seconds = String(now.getSeconds()).padStart(2, '0');
+            clock.textContent = `${hours}:${minutes}:${seconds}`;
+        }
+
+        setInterval(updateClock, 1000); // Update every second
+        updateClock(); // Initialize clock immediately
+    </script>
 </body>
 </html>
